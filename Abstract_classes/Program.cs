@@ -2,31 +2,41 @@
 
 namespace Abstract_classes
 {
+    //Abstract class House
     public abstract class House
     {
+        //Public fields
         public double square_meters;
         public int number_of_rooms;
         public double price_coof;
 
+        //Constructor of the House class
         public House(int number_of_rooms, double square_meters)
         {
             this.number_of_rooms = number_of_rooms;
             this.square_meters = square_meters;
         }
 
+        //Abstract methods
         public abstract void Look();
         public abstract void Price(double budget);
     }
 
+    //Derived class
     public class Flat : House
     {
-
+        //Constructor of the Flat class
         public Flat(int number_of_rooms, double square_meters) : base(number_of_rooms, square_meters) { }
+
+        //Overriden method Look
+        //which outputs how the house looks like(is it flat, villa, townhouse or something else)
         public override void Look()
         {
             Console.WriteLine("You can afford a regular flat with {0} number of rooms and {1} square meters", number_of_rooms, square_meters);
         }
 
+        //Overriden method Price
+        //Which calculates the price of dwelling
         public override void Price(double budget)
         {
             price_coof = 1;
@@ -43,17 +53,19 @@ namespace Abstract_classes
         }
     }
 
+    //Another Derived class
     public class Townhouse : House
     {
-        public Townhouse(int number_of_rooms, double square_meters) : base(number_of_rooms, square_meters)
-        {
-        }
+        //Constructor of the Townhouse class
+        public Townhouse(int number_of_rooms, double square_meters) : base(number_of_rooms, square_meters){}
 
+        //Overriden method Look
         public override void Look()
         {
             Console.WriteLine("You can afford a townhouse with {0} number of rooms and {1} square meters", number_of_rooms, square_meters);
         }
 
+        //Overriden method Price
         public override void Price(double budget)
         {
             price_coof = 1.84;
@@ -70,17 +82,19 @@ namespace Abstract_classes
         }
     }
 
+    //And another one derived class
     public class Villa : House
     {
-        public Villa(int number_of_rooms, double square_meters) : base(number_of_rooms, square_meters)
-        {
-        }
-
+        //Constructor of the villa class
+        public Villa(int number_of_rooms, double square_meters) : base(number_of_rooms, square_meters){}
+        
+        //Overriden method Look
         public override void Look()
         {
             Console.WriteLine("You can afford a Luxurious villa with {0} number of rooms and {1} square meters", number_of_rooms, square_meters);
         }
 
+        //Overriden method Price
         public override void Price(double budget)
         {
             price_coof = 2.76;
